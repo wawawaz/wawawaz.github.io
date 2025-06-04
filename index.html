@@ -1,1 +1,97 @@
-<h1>こんにちは</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>授業紹介</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .teacher-photo {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .class-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .info {
+      margin-bottom: 0.5rem;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>授業紹介</h1>
+
+  <div class="card-container">
+    <!-- 統計力学 -->
+    <div class="card">
+      <img src="https://www.st.keio.ac.jp/tprofile/images/I_fujitani_youhei.jpg" alt="藤谷洋平 教授" class="teacher-photo">
+      <div class="class-title">統計力学</div>
+      <div class="info"><span class="label">時間:</span> 月・金曜2限</div>
+      <div class="info"><span class="label">授業内容:</span> 統計力学学びます</div>
+      <div class="info"><span class="label">成績評価:</span> 中間50%、期末50%</div>
+      <div class="info"><span class="label">感想:</span> 難しいけど教員の説明が丁寧で理解が深まった。おもいねー</div>
+    </div>
+
+    <!-- 量子力学 -->
+    <div class="card">
+      <img src="https://www.st.keio.ac.jp/tprofile/images/I_hayase_junko.jpg" alt="早瀬順子 教授" class="teacher-photo">
+      <div class="class-title">量子力学</div>
+      <div class="info"><span class="label">時間:</span> 月曜5限・金曜3限</div>
+      <div class="info"><span class="label">授業内容:</span> 量子力学を物理的な理解をもとに学ぶ。特に、</div>
+      <div class="info"><span class="label">成績評価:</span> 出席40%、中間30%、期末30%</div>
+      <div class="info"><span class="label">感想:</span> 最高です。物理的な意味が</div>
+    </div>
+  </div>
+</body>
+</html>
+
