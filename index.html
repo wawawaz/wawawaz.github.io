@@ -11,6 +11,8 @@
       padding: 0;
       background: #f4f4f9;
       color: #333;
+      display: flex;
+      flex-direction: row;
     }
 
     header {
@@ -20,6 +22,50 @@
       text-align: center;
       font-size: 1.5rem;
       letter-spacing: 1px;
+      width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      background: #2c3e50;
+      color: white;
+      padding: 1rem;
+      width: 200px;
+      min-width: 160px;
+    }
+
+    nav h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 1rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ecf0f1;
+      background: #34495e;
+      padding: 0.5rem 1rem;
+      display: block;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #1abc9c;
+    }
+
+    main {
+      flex: 1;
     }
 
     .container {
@@ -79,7 +125,7 @@
       color: #666;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
       .card {
         flex-direction: row;
       }
@@ -93,39 +139,67 @@
         flex: 1;
       }
     }
+
+    @media (max-width: 600px) {
+      nav {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>授業紹介ページ</header>
+  <nav>
+    <h2>授業一覧</h2>
+    <ul>
+      <li><a href="#statmech">統計力学</a></li>
+      <li><a href="#quantum">量子力学</a></li>
+      <li><a href="#control">制御工学同演習</a></li>
+    </ul>
+  </nav>
 
-  <main class="container">
-    <!-- 統計力学 -->
-    <div class="card">
-      <img src="https://www.st.keio.ac.jp/tprofile/images/I_fujitani_youhei.jpg" alt="藤谷先生の写真">
-      <div class="card-content">
-        <h2>統計力学</h2>
-        <p class="info">月・金曜2限</p>
-        <div class="section"><strong>授業内容:</strong>統計力学学びます</div>
-        <div class="section"><strong>成績評価:</strong>中間50%期末50%</div>
-        <div class="section"><strong>感想:</strong>難しいけど教員の説明が丁寧で理解が深まった。おもいねー</div>
+  <main>
+    <header>授業紹介ページ</header>
+    <div class="container">
+      <!-- 統計力学 -->
+      <div class="card" id="statmech">
+        <img src="https://www.st.keio.ac.jp/tprofile/images/I_fujitani_youhei.jpg" alt="藤谷先生の写真">
+        <div class="card-content">
+          <h2>統計力学</h2>
+          <p class="info">月・金曜2限</p>
+          <div class="section"><strong>授業内容:</strong>統計力学学びます</div>
+          <div class="section"><strong>成績評価:</strong>中間50%期末50%</div>
+          <div class="section"><strong>感想:</strong>難しいけど教員の説明が丁寧で理解が深まった。おもいねー</div>
+        </div>
       </div>
-    </div>
 
-    <!-- 量子力学 -->
-    <div class="card">
-      <img src="https://www.st.keio.ac.jp/tprofile/images/I_hayase_junko.jpg" alt="早瀬先生の写真">
-      <div class="card-content">
-        <h2>量子力学</h2>
-        <p class="info">月曜5限・金曜3限</p>
-        <div class="section"><strong>授業内容:</strong>量子力学を物理的な理解をもとに学ぶ。特に、</div>
-        <div class="section"><strong>成績評価:</strong>出席40%、中間30%、期末30%</div>
-        <div class="section"><strong>感想:</strong>最高です。物理的な意味が</div>
+      <!-- 量子力学 -->
+      <div class="card" id="quantum">
+        <img src="https://www.st.keio.ac.jp/tprofile/images/I_hayase_junko.jpg" alt="早瀬先生の写真">
+        <div class="card-content">
+          <h2>量子力学</h2>
+          <p class="info">月曜5限・金曜3限</p>
+          <div class="section"><strong>授業内容:</strong>量子力学を物理的な理解をもとに学ぶ。特に、</div>
+          <div class="section"><strong>成績評価:</strong>出席40%、中間30%、期末30%</div>
+          <div class="section"><strong>感想:</strong>最高です。物理的な意味が</div>
+        </div>
+      </div>
+
+      <!-- 制御工学同演習 -->
+      <div class="card" id="control">
+        <img src="https://www.st.keio.ac.jp/tprofile/images/I_inoue_masaki.jpg" alt="井上先生の写真">
+        <div class="card-content">
+          <h2>制御工学同演習</h2>
+          <p class="info">月曜3限・金曜2限</p>
+          <div class="section"><strong>授業内容:</strong>制御の基礎を学ぶ、フィードバック制御やフィードフォワード制御</div>
+          <div class="section"><strong>成績評価:</strong>課題10%、中間30%、期末60%</div>
+          <div class="section"><strong>感想:</strong>ボード線図！Gang of four かっこいい！</div>
+        </div>
       </div>
     </div>
   </main>
 
   <script>
-    // カードがスクロールで表示される処理
+    // スクロールアニメーション
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -142,4 +216,3 @@
   </script>
 </body>
 </html>
-
